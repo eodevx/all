@@ -20,7 +20,7 @@ echo "Do you have a low end GPU? [y/n]"
 read hasLowEndGpu
 if [ "$hasLowEndGpu" == "y" ]; then
   echo '#!/bin/sh
-
+cd stable-diffusion-webui
 source venv/bin/activate
 
 export HSA_OVERRIDE_GFX_VERSION=11.0.0
@@ -32,7 +32,7 @@ python3 launch.py --listen --enable-insecure-extension-access --opt-sdp-attentio
 
 if [ "$hasLowEndGpu" == "n" ]; then
   echo '#!/bin/sh
-
+cd stable-diffusion-webui
 source venv/bin/activate
 
 export HSA_OVERRIDE_GFX_VERSION=11.0.0
